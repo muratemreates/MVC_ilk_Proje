@@ -1,0 +1,36 @@
+﻿@model List<WepAppWithDatabase.Models.Ogrenci>
+@{
+    ViewBag.Title = "Öğrenci Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2> Öğrenci Listesi</h2>
+    <div>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Yaş</th>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            @foreach (var ogrenci in Model)
+            {
+                <tr>
+                    <td>@ogrenci.Name</td>
+                    <td>@ogrenci.Surname</td>
+                    <td>@ogrenci.Age</td>
+                    <td><a class="btn btn-info" href="/Ogrenciler/Detay/@ogrenci.Id">Git</a></td>
+                </tr>
+            }
+
+            </tbody>
+
+
+        </table>
+    </div>
+</div>
